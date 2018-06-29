@@ -157,11 +157,11 @@ exceptions:
     active: false
     methodNames: 'toString,hashCode,equals,finalize'
   InstanceOfCheckForException:
-    active: false
+    active: true
   NotImplementedDeclaration:
     active: false
   PrintStackTrace:
-    active: false
+    active: true
   RethrowCaughtException:
     active: false
   ReturnFromFinally:
@@ -171,12 +171,12 @@ exceptions:
   ThrowingExceptionFromFinally:
     active: false
   ThrowingExceptionInMain:
-    active: false
+    active: true
   ThrowingExceptionsWithoutMessageOrCause:
     active: false
     exceptions: 'IllegalArgumentException,IllegalStateException,IOException'
   ThrowingNewInstanceOfSameException:
-    active: false
+    active: true
   TooGenericExceptionCaught:
     active: true
     exceptionNames:
@@ -350,7 +350,7 @@ potential-bugs:
   DuplicateCaseInWhenExpression:
     active: true
   EqualsAlwaysReturnsTrueOrFalse:
-    active: false
+    active: true
   EqualsWithHashCodeExist:
     active: true
   ExplicitGarbageCollectionCall:
@@ -358,9 +358,9 @@ potential-bugs:
   InvalidRange:
     active: false
   IteratorHasNextCallsNextMethod:
-    active: false
+    active: true
   IteratorNotThrowingNoSuchElementException:
-    active: false
+    active: true
   LateinitUsage:
     active: false
     excludeAnnotatedProperties: ""
@@ -376,7 +376,7 @@ potential-bugs:
   UselessPostfixExpression:
     active: false
   WrongEqualsTypeParameter:
-    active: false
+    active: true
 
 style:
   active: true
@@ -437,7 +437,7 @@ style:
   OptionalWhenBraces:
     active: false
   PreferToOverPairSyntax:
-    active: false
+    active: true
   ProtectedMemberInFinalClass:
     active: false
   RedundantVisibilityModifierRule:
@@ -449,7 +449,7 @@ style:
   SafeCast:
     active: true
   SerialVersionUIDInSerializableClass:
-    active: false
+    active: true
   SpacingBetweenPackageAndImports:
     active: false
   ThrowsCount:
