@@ -205,7 +205,7 @@
           
           
           
-          <li><a href="/detekt/configurations.html">detekt Configuration File</a></li>
+          <li><a href="/detekt/configurations.html">Configuration File</a></li>
           
           
           
@@ -220,13 +220,6 @@
           
           
           <li><a href="/detekt/baseline.html">Suppressing Issues via Baseline File</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a href="/detekt/failonbuild.html">Configure Build Failure Thresholds</a></li>
           
           
           
@@ -582,6 +575,10 @@ For example, like this: <code class="language-plaintext highlighter-rouge">mv de
       Entry should consist of: [report-id:path]. Available 'report-id' values:
       'txt', 'xml', 'html'. These can also be used in combination with each
       other e.g. '-r txt:reports/detekt.txt -r xml:reports/detekt.xml'
+    --base-path, -bp
+      Specifies a directory as the base path.
+      Currently it impacts all file paths in the formatted reports.
+      File paths in console output and txt report are not affected and remain as absolute paths.
     --version
       Prints the detekt CLI version.
       Default: false
@@ -603,7 +600,7 @@ For example, like this: <code class="language-plaintext highlighter-rouge">mv de
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 The detekt Team. All rights reserved. <br />
- Site last generated: Jan 7, 2021 <br />
+ Site last generated: Jan 15, 2021 <br />
                 </div>
             </div>
 </footer>
