@@ -212,6 +212,13 @@
           
           
           
+          <li><a href="/detekt/reporting.html">Reporting</a></li>
+          
+          
+          
+          
+          
+          
           <li><a href="/detekt/suppressing-rules.html">Suppressing Issues in Code</a></li>
           
           
@@ -227,6 +234,13 @@
           
           
           <li><a href="/detekt/extensions.html">Extending detekt</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="/detekt/snapshots.html">Using snapshots</a></li>
           
           
           
@@ -490,7 +504,7 @@ and rule authors the ability to write <em>library only</em> rules.</p>
 <p>For this the following code must be inside the detekt config:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">build</span><span class="pi">:</span>
-  <span class="na">maxIssues</span><span class="pi">:</span> <span class="m">10</span> <span class="c1"># break the build if ten weighted issues are found</span>
+  <span class="na">maxIssues</span><span class="pi">:</span> <span class="m">10</span> <span class="c1"># break the build if more than ten weighted issues are found</span>
   <span class="na">weights</span><span class="pi">:</span>
     <span class="na">complexity</span><span class="pi">:</span> <span class="m">2</span> <span class="c1"># every rule of the complexity rule set should count as if two issues were found...</span>
     <span class="na">LongParameterList</span><span class="pi">:</span> <span class="m">1</span> <span class="c1"># ...with the exception of the LongParameterList rule.</span>
@@ -537,7 +551,7 @@ The rule violations are grouped by file location.</p>
 
 <h2 id="output-reports">Output Reports</h2>
 
-<p>Uncomment the reports you don’t care about.</p>
+<p>Uncomment the reports you don’t care about. The detailed description can be found in <a href="/detekt/reporting.html">reporting</a>.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">output-reports</span><span class="pi">:</span>
   <span class="na">active</span><span class="pi">:</span> <span class="no">true</span>
@@ -547,18 +561,6 @@ The rule violations are grouped by file location.</p>
   <span class="c1">#  - 'XmlOutputReport'</span>
   <span class="c1">#  - 'SarifOutputReport'</span>
 </code></pre></div></div>
-
-<p><strong>HtmlOutputReport</strong> contains rule violations and metrics formatted in a human friendly way, so that it can be inspected in a web browser.</p>
-
-<p><strong>TxtOutputReport</strong> contains rule violations in a plain text report similar to a log file.</p>
-
-<p><strong>XmlOutputReport</strong> contains rule violations in an XML format. The report follows the structure of a <a href="https://checkstyle.sourceforge.io">Checkstyle report</a>.</p>
-
-<p><strong>SarifOutputReport</strong> contains rule violations in the SARIF format. Please check <a href="https://sarifweb.azurewebsites.net/">SARIF</a>.</p>
-
-<p>Rule violations show the name of the violated rule and in which file the issue happened.
-The mentioned metrics show detailed statistics concerning the analyzed code.
-For instance the source lines of code and the McCabe complexity are calculated.</p>
 
 <h2 id="processors">Processors</h2>
 
@@ -575,11 +577,18 @@ For example, when all count processors are enabled, a detekt html report might l
     <span class="na">active</span><span class="pi">:</span> <span class="no">true</span>
     <span class="na">exclude</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s1">'</span><span class="s">DetektProgressListener'</span>
+        <span class="c1"># - 'KtFileCountProcessor'</span>
+        <span class="c1"># - 'PackageCountProcessor'</span>
+        <span class="c1"># - 'ClassCountProcessor'</span>
         <span class="c1"># - 'FunctionCountProcessor'</span>
         <span class="c1"># - 'PropertyCountProcessor'</span>
-        <span class="c1"># - 'ClassCountProcessor'</span>
-        <span class="c1"># - 'PackageCountProcessor'</span>
-        <span class="c1"># - 'KtFileCountProcessor'</span>
+        <span class="c1"># - 'ProjectComplexityProcessor'</span>
+        <span class="c1"># - 'ProjectCognitiveComplexityProcessor'</span>
+        <span class="c1"># - 'ProjectLLOCProcessor'</span>
+        <span class="c1"># - 'ProjectCLOCProcessor'</span>
+        <span class="c1"># - 'ProjectLOCProcessor'</span>
+        <span class="c1"># - 'ProjectSLOCProcessor'</span>
+        <span class="c1"># - 'LicenseHeaderLoaderExtension'</span>
 </code></pre></div></div>
 
 <h2 id="config-json-schema">Config JSON Schema</h2>
@@ -611,7 +620,7 @@ More details on the IntelliJ support are available
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 The detekt Team. All rights reserved. <br />
- Site last generated: Jan 15, 2021 <br />
+ Site last generated: Mar 1, 2021 <br />
                 </div>
             </div>
 </footer>
