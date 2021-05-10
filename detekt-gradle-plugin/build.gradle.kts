@@ -12,7 +12,7 @@ repositories {
 val intTest: Configuration by configurations.creating
 
 dependencies {
-    val androidGradlePlugin = "com.android.tools.build:gradle:4.1.3"
+    val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0"
     implementation(kotlin("gradle-plugin-api"))
     implementation("io.github.detekt.sarif4k:sarif4k")
     compileOnly(androidGradlePlugin)
